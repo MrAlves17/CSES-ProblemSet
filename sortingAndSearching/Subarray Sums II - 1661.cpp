@@ -45,12 +45,6 @@ int main(){
 		}else{
 			m[sum_now] = 1;
 		}
-
-		for(it=m.begin(); it!=m.end(); it++){
-			cout << it->F << " " << it->S << endl;
-		}
-
-		cout << endl;
 	}
 
 	cout << numSubArrays << endl;
