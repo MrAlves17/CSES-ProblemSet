@@ -39,13 +39,12 @@ int main(){
 
 	REP(i,0,n){
 		// make combination of n choose 2
-		if(mod[i]>1){
-			numSubDiv += (mod[i]*(mod[i]-1))/2;
-		}
+		numSubDiv += (mod[i]*(mod[i]-1))/2;
 	}
 
+	// when mod==0, this means that the subarray [0,i] doesn't need a pair to match
+	// it wasn't counted yet
 	numSubDiv += mod[0];
-
 
 	cout << numSubDiv << endl;
 
