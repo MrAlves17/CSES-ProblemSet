@@ -27,7 +27,7 @@ int main(){
 		cin >> a;
 		ps[i+1] = ps[i] + a;
 	}
-	// ps is sorted and doesn't have repeated numbers, since all numbers read are positive (>=1)
+	// ps doesn't have repeated numbers, since all numbers read are positive (>=1)
 
 	ll numSubArrays=0;
 	REP(i,0,n){
