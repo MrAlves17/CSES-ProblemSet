@@ -13,6 +13,10 @@
 
 using namespace std;
 
+/*
+	Complexity: O(n*log(sum))
+*/
+
 int main(){
 	FAST_I;
 
@@ -27,6 +31,7 @@ int main(){
 	}
 
 	ll i=0,j=sum, max_sum, best=sum;
+	// find in range 0 <-> sum the limit of the largest sum
 	while(i<=j){
 		ll mid = (i+j)/2;
 
@@ -42,6 +47,8 @@ int main(){
 		}
 		max_sum = max(max_sum,cur_sum);
 
+		// if solution has k subarrays, the best solution can be setted
+		// otherwise, keep looking.
 		if(count == k){
 			best = min(best,max_sum);
 			j = mid-1;
