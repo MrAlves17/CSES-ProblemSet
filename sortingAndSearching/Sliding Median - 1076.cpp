@@ -62,11 +62,7 @@ int main(){
 	}
 
 	// PART 2: print the result of the median
-	if(minSet.size() >= maxSet.size()){
-		cout << *minSet.rbegin() << " ";
-	}else{
-		cout << *maxSet.rbegin() << " ";
-	}
+	cout << *minSet.rbegin() << " ";
 
 	// PART 3: apply for the rest of windows
 	REP(i,k,n){
@@ -96,11 +92,7 @@ int main(){
 			}
 		}
 
-		if(minSet.size() >= maxSet.size()){
-			cout << *minSet.rbegin() << " ";
-		}else{
-			cout << *maxSet.rbegin() << " ";
-		}
+		cout << *minSet.rbegin() << " ";
 	}
 
 	cout << endl;
