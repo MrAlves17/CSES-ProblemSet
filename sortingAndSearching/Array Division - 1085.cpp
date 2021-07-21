@@ -24,36 +24,35 @@ int main(){
 	cin >> n >> k;
 
 	vector<ll> x(n);
-	ll max_x=0, sum=0;
+	ll sum=0;
 	REP(i,0,n){
 		cin >> x[i];
 		sum += x[i];
 	}
 
-	ll i=0,j=sum, max_sum, best=sum;
+	ll i=0,j=sum, best=sum;
 	// find in range 0 <-> sum the limit of the largest sum
 	while(i<=j){
 		ll mid = (i+j)/2;
 
 		ll count=1, cur_sum=0;
-		max_sum=0;
 		for(ll l=0; l<n; l++){
+			if(x[l] > mid){
+				count = k+1;
+				break;
+			}
 			if(cur_sum + x[l] > mid){
 				count++;
-				max_sum = max(max_sum,cur_sum);
 				cur_sum=0;
 			}
 			cur_sum += x[l];
 		}
-		max_sum = max(max_sum,cur_sum);
 
 		// if solution has k subarrays, the best solution can be setted
 		// otherwise, keep looking.
-		if(count == k){
-			best = min(best,max_sum);
+		if(count <= k){
 			j = mid-1;
-		}else if(count < k){
-			j = mid-1;
+			best = mid;
 		}else{
 			i = mid+1;
 		}
